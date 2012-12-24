@@ -1,5 +1,5 @@
-WebJar for [Library]
+WebJar for RequireJS plugins
 
 More info: http://webjars.org
 
-Upstream: [Library URL]
+Upstream: https://github.com/millermedeiros/requirejs-plugins
