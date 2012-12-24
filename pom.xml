@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>requirejs-plugins</artifactId>
-    <version>3ff54566f8-SNAPSHOT</version>
+    <version>3ff54566f8</version>
     <name>RequireJS plugins</name>
     <description>WebJar for RequireJS plugins</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/requirejs-plugins</url>
         <connection>scm:git:https://github.com/webjars/requirejs-plugins.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/requirejs-plugins.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>requirejs-plugins-3ff54566f8</tag>
     </scm>
     
     <dependencies>
