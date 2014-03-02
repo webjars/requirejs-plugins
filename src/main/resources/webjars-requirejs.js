@@ -8,7 +8,7 @@ var webjarsRequirejsPluginsChildren = [
     'noext',
     'propertyParser'
 ];
-var webjarsRequirejsPluginsPaths = {}
+var webjarsRequirejsPluginsPaths = {};
 webjarsRequirejsPluginsChildren.forEach(function (child) {
     webjarsRequirejsPluginsPaths[child] = webjars.path("requirejs-plugins", child);
 });
