@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>requirejs-plugins</artifactId>
-    <version>1.0.2-1-SNAPSHOT</version>
+    <version>1.0.2-1</version>
     <name>RequireJS plugins</name>
     <description>WebJar for RequireJS plugins</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/requirejs-plugins</url>
         <connection>scm:git:https://github.com/webjars/requirejs-plugins.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/requirejs-plugins.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>requirejs-plugins-1.0.2-1</tag>
     </scm>
     
     <dependencies>
@@ -98,11 +98,11 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/requirejs-plugins-${upstream.version}/src"/>
+                                    <fileset dir="${project.build.directory}/requirejs-plugins-${upstream.version}/src" />
                                 </move>
                             </target>
                         </configuration>
