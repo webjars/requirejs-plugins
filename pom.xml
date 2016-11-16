@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>requirejs-plugins</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.2-1-SNAPSHOT</version>
     <name>RequireJS plugins</name>
     <description>WebJar for RequireJS plugins</description>
     <url>http://webjars.org</url>
@@ -52,6 +52,20 @@
         <upstream.version>1.0.2</upstream.version>
         <upstream.url>https://github.com/millermedeiros/requirejs-plugins/archive</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "async": "async",
+                    "font": "font",
+                    "goog": "goog",
+                    "image": "image",
+                    "json": "json",
+                    "mdown": "mdown",
+                    "noext": "noext",
+                    "propertyParser": "propertyParser"
+                }
+            }
+        </requirejs>
     </properties>
 
     <build>
@@ -84,34 +98,28 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
+                                <echo message="unzip archive"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
+                                <echo message="moving resources"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/requirejs-plugins-${upstream.version}/src" />
+                                    <fileset dir="${project.build.directory}/requirejs-plugins-${upstream.version}/src"/>
                                 </move>
                             </target>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.2</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.scm</groupId>
-                        <artifactId>maven-scm-provider-gitexe</artifactId>
-                        <version>1.9</version>
-                    </dependency>
-                </dependencies>
+                <version>2.5.3</version>
             </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.5.1</version>
+                <version>1.6.7</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
@@ -120,6 +128,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
         <resources>
             <resource>
                 <directory>${project.basedir}/src/main/resources</directory>
